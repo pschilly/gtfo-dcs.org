@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "efa49d91dd3fa2ba137ad9b8df8f5434",
+    "content-hash": "59e269f6bf72b1a62721119c02362fca",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -5058,11 +5058,17 @@
         },
         {
             "name": "pschilly/filament-dcs-server-stats",
-            "version": "dev-main",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pschilly/filament-dcs-server-stats.git",
+                "reference": "bdfd3584a3e63ed212f1b75cc1b25ba1cd177454"
+            },
             "dist": {
-                "type": "path",
-                "url": "D:/Code/packages/pschilly/filament-dcs-server-stats",
-                "reference": "9d84666fab4a329820bc63f53a431c8be8f21d66"
+                "type": "zip",
+                "url": "https://api.github.com/repos/pschilly/filament-dcs-server-stats/zipball/bdfd3584a3e63ed212f1b75cc1b25ba1cd177454",
+                "reference": "bdfd3584a3e63ed212f1b75cc1b25ba1cd177454",
+                "shasum": ""
             },
             "require": {
                 "codeat3/blade-phosphor-icons": "^2.3",
@@ -5088,12 +5094,12 @@
             "type": "library",
             "extra": {
                 "laravel": {
-                    "providers": [
-                        "Pschilly\\FilamentDcsServerStats\\FilamentDcsServerStatsServiceProvider"
-                    ],
                     "aliases": {
                         "FilamentDcsServerStats": "Pschilly\\FilamentDcsServerStats\\Facades\\FilamentDcsServerStats"
-                    }
+                    },
+                    "providers": [
+                        "Pschilly\\FilamentDcsServerStats\\FilamentDcsServerStatsServiceProvider"
+                    ]
                 }
             },
             "autoload": {
@@ -5101,26 +5107,7 @@
                     "Pschilly\\FilamentDcsServerStats\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": []
-            },
-            "scripts": {
-                "post-autoload-dump": [
-                    "@php ./vendor/bin/testbench package:discover --ansi"
-                ],
-                "analyse": [
-                    "phpstan analyse"
-                ],
-                "lint": [
-                    "pint"
-                ],
-                "test": [
-                    "pest"
-                ],
-                "test:lint": [
-                    "pint --test"
-                ]
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -5143,10 +5130,13 @@
                 "issues": "https://github.com/pschilly/filament-dcs-server-stats/issues",
                 "source": "https://github.com/pschilly/filament-dcs-server-stats"
             },
-            "transport-options": {
-                "symlink": true,
-                "relative": false
-            }
+            "funding": [
+                {
+                    "url": "https://github.com/pschilly",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-08-23T21:58:16+00:00"
         },
         {
             "name": "psr/clock",
@@ -12615,9 +12605,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "pschilly/filament-dcs-server-stats": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
