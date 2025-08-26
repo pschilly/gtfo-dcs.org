@@ -2403,16 +2403,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v12.25.0",
+            "version": "v12.26.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2ee2ba94ae60efd24c7a787cbb1a2f82f714bb20"
+                "reference": "56c5fc46cfb1005d0aaa82c7592d63edb776a787"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2ee2ba94ae60efd24c7a787cbb1a2f82f714bb20",
-                "reference": "2ee2ba94ae60efd24c7a787cbb1a2f82f714bb20",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/56c5fc46cfb1005d0aaa82c7592d63edb776a787",
+                "reference": "56c5fc46cfb1005d0aaa82c7592d63edb776a787",
                 "shasum": ""
             },
             "require": {
@@ -2454,7 +2454,7 @@
                 "symfony/mime": "^7.2.0",
                 "symfony/polyfill-php83": "^1.31",
                 "symfony/polyfill-php84": "^1.31",
-                "symfony/polyfill-php85": "^1.31",
+                "symfony/polyfill-php85": "^1.33",
                 "symfony/process": "^7.2.0",
                 "symfony/routing": "^7.2.0",
                 "symfony/uid": "^7.2.0",
@@ -2616,7 +2616,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2025-08-18T22:20:52+00:00"
+            "time": "2025-08-26T18:04:56+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -4980,16 +4980,16 @@
         },
         {
             "name": "pschilly/dcs-server-bot-api",
-            "version": "v0.2.8",
+            "version": "v0.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pschilly/dcs-server-bot-api.git",
-                "reference": "716d00438803cbcf2f781d7a52ccb2fab82d96f4"
+                "reference": "759b0527ed26b724052dbaa9ba6f808f9aa2216b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pschilly/dcs-server-bot-api/zipball/716d00438803cbcf2f781d7a52ccb2fab82d96f4",
-                "reference": "716d00438803cbcf2f781d7a52ccb2fab82d96f4",
+                "url": "https://api.github.com/repos/pschilly/dcs-server-bot-api/zipball/759b0527ed26b724052dbaa9ba6f808f9aa2216b",
+                "reference": "759b0527ed26b724052dbaa9ba6f808f9aa2216b",
                 "shasum": ""
             },
             "require": {
@@ -5046,7 +5046,7 @@
             ],
             "support": {
                 "issues": "https://github.com/pschilly/dcs-server-bot-api/issues",
-                "source": "https://github.com/pschilly/dcs-server-bot-api/tree/v0.2.8"
+                "source": "https://github.com/pschilly/dcs-server-bot-api/tree/v0.2.9"
             },
             "funding": [
                 {
@@ -5054,20 +5054,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-23T20:37:27+00:00"
+            "time": "2025-08-26T20:36:17+00:00"
         },
         {
             "name": "pschilly/filament-dcs-server-stats",
-            "version": "0.1.0",
+            "version": "0.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pschilly/filament-dcs-server-stats.git",
-                "reference": "bdfd3584a3e63ed212f1b75cc1b25ba1cd177454"
+                "reference": "46a077980f05b25ece8c483ed85d546d63fa47fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pschilly/filament-dcs-server-stats/zipball/bdfd3584a3e63ed212f1b75cc1b25ba1cd177454",
-                "reference": "bdfd3584a3e63ed212f1b75cc1b25ba1cd177454",
+                "url": "https://api.github.com/repos/pschilly/filament-dcs-server-stats/zipball/46a077980f05b25ece8c483ed85d546d63fa47fe",
+                "reference": "46a077980f05b25ece8c483ed85d546d63fa47fe",
                 "shasum": ""
             },
             "require": {
@@ -5136,7 +5136,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-23T21:58:16+00:00"
+            "time": "2025-08-24T23:18:54+00:00"
         },
         {
             "name": "psr/clock",
@@ -9853,16 +9853,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.44.0",
+            "version": "v1.45.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "a09097bd2a8a38e23ac472fa6a6cf5b0d1c1d3fe"
+                "reference": "019a2933ff4a9199f098d4259713f9bc266a874e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/a09097bd2a8a38e23ac472fa6a6cf5b0d1c1d3fe",
-                "reference": "a09097bd2a8a38e23ac472fa6a6cf5b0d1c1d3fe",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/019a2933ff4a9199f098d4259713f9bc266a874e",
+                "reference": "019a2933ff4a9199f098d4259713f9bc266a874e",
                 "shasum": ""
             },
             "require": {
@@ -9912,7 +9912,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2025-07-04T16:17:06+00:00"
+            "time": "2025-08-25T19:28:31+00:00"
         },
         {
             "name": "mockery/mockery",
