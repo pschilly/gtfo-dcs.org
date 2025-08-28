@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2bb2b55b5d5e9016395b4ea6da7c95b5",
+    "content-hash": "ee6ff53fdd67a4093ea30bd2b310d9c8",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2337,6 +2337,207 @@
                 }
             ],
             "time": "2025-08-22T14:27:06+00:00"
+        },
+        {
+            "name": "inerba/filament-db-config",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/inerba/filament-db-config.git",
+                "reference": "a32e67bd3ebe685355fc528b1b785ca2c5b4b098"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/inerba/filament-db-config/zipball/a32e67bd3ebe685355fc528b1b785ca2c5b4b098",
+                "reference": "a32e67bd3ebe685355fc528b1b785ca2c5b4b098",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.15.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.6",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8",
+                "orchestra/testbench": "^9.0",
+                "pestphp/pest": "^2.0",
+                "pestphp/pest-plugin-arch": "^2.0",
+                "pestphp/pest-plugin-laravel": "^2.0",
+                "spatie/laravel-ray": "^1.35"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "DbConfig": "Inerba\\DbConfig\\Facades\\DbConfig"
+                    },
+                    "providers": [
+                        "Inerba\\DbConfig\\DbConfigServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Inerba\\DbConfig\\": "src/",
+                    "Inerba\\DbConfig\\Database\\Factories\\": "database/factories/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Francesco",
+                    "email": "inerba@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "DB Config – A Filament plugin that provides a database-backed key/value store for application settings, with caching and easy settings page generation.",
+            "homepage": "https://github.com/inerba/filament-db-config",
+            "keywords": [
+                "filament",
+                "filament-plugin",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/inerba/filament-db-config/issues",
+                "source": "https://github.com/inerba/filament-db-config"
+            },
+            "time": "2025-08-25T12:42:06+00:00"
+        },
+        {
+            "name": "jeffersongoncalves/filament-cookie-consent",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeffersongoncalves/filament-cookie-consent.git",
+                "reference": "946c36cf5e3e2f4ca1bb45a11de4e25a045b58b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeffersongoncalves/filament-cookie-consent/zipball/946c36cf5e3e2f4ca1bb45a11de4e25a045b58b4",
+                "reference": "946c36cf5e3e2f4ca1bb45a11de4e25a045b58b4",
+                "shasum": ""
+            },
+            "require": {
+                "filament/filament": "^4.0",
+                "jeffersongoncalves/laravel-cookie-consent": "^1.0",
+                "laravel/framework": "^11.0|^12.0",
+                "php": "^8.2|^8.3",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "orchestra/testbench": "^9.0|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JeffersonGoncalves\\Filament\\CookieConsent\\CookieConsentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeffersonGoncalves\\Filament\\CookieConsent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jefferson Gonçalves",
+                    "email": "gerson.simao.92@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This Filament package provides a simple and elegant way to implement cookie consent on your website, ensuring compliance with privacy regulations like GDPR and CCPA. It offers a clean and customizable interface, allowing you to easily manage and display cookie consent banners and preferences.",
+            "homepage": "https://github.com/jeffersongoncalves/filament-cookie-consent",
+            "keywords": [
+                "filament-cookie-consent",
+                "jeffersongoncalves",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/jeffersongoncalves/filament-cookie-consent/issues",
+                "source": "https://github.com/jeffersongoncalves/filament-cookie-consent/tree/v2.0.0"
+            },
+            "time": "2025-07-17T16:56:43+00:00"
+        },
+        {
+            "name": "jeffersongoncalves/laravel-cookie-consent",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jeffersongoncalves/laravel-cookie-consent.git",
+                "reference": "0faf45bf57628f966732c9445bc151762816b923"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jeffersongoncalves/laravel-cookie-consent/zipball/0faf45bf57628f966732c9445bc151762816b923",
+                "reference": "0faf45bf57628f966732c9445bc151762816b923",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^11.0|^12.0",
+                "php": "^8.2|^8.3",
+                "spatie/laravel-package-tools": "^1.14.0"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "orchestra/testbench": "^9.0|^10.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "JeffersonGoncalves\\CookieConsent\\CookieConsentServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "JeffersonGoncalves\\CookieConsent\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jefferson Gonçalves",
+                    "email": "gerson.simao.92@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "This Laravel package provides a simple and elegant way to implement cookie consent on your website, ensuring compliance with privacy regulations like GDPR and CCPA. It offers a clean and customizable interface, allowing you to easily manage and display cookie consent banners and preferences.",
+            "homepage": "https://github.com/jeffersongoncalves/laravel-cookie-consent",
+            "keywords": [
+                "jeffersongoncalves",
+                "laravel",
+                "laravel-cookie-consent"
+            ],
+            "support": {
+                "issues": "https://github.com/jeffersongoncalves/laravel-cookie-consent/issues",
+                "source": "https://github.com/jeffersongoncalves/laravel-cookie-consent/tree/v1.1.1"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/jeffersongoncalves",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-03-03T22:11:47+00:00"
         },
         {
             "name": "kirschbaum-development/eloquent-power-joins",
@@ -5058,22 +5259,24 @@
         },
         {
             "name": "pschilly/filament-dcs-server-stats",
-            "version": "0.1.4",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pschilly/filament-dcs-server-stats.git",
-                "reference": "d804c32e0f07e3c09d5ab904a49a88afe33f668b"
+                "reference": "70ae2df900006573139f47fde9a8367f196f3525"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pschilly/filament-dcs-server-stats/zipball/d804c32e0f07e3c09d5ab904a49a88afe33f668b",
-                "reference": "d804c32e0f07e3c09d5ab904a49a88afe33f668b",
+                "url": "https://api.github.com/repos/pschilly/filament-dcs-server-stats/zipball/70ae2df900006573139f47fde9a8367f196f3525",
+                "reference": "70ae2df900006573139f47fde9a8367f196f3525",
                 "shasum": ""
             },
             "require": {
                 "codeat3/blade-phosphor-icons": "^2.3",
                 "codeat3/blade-rpg-awesome-icons": "^1.6",
                 "filament/filament": "^4.0",
+                "inerba/filament-db-config": "*",
+                "livewire/livewire": "*",
                 "php": "^8.2",
                 "pschilly/dcs-server-bot-api": "^0.2.0",
                 "spatie/laravel-package-tools": "^1.15.0"
@@ -5136,7 +5339,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-27T18:27:49+00:00"
+            "time": "2025-08-27T20:14:31+00:00"
         },
         {
             "name": "psr/clock",
