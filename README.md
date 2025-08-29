@@ -1,4 +1,6 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center">
+<img width="512" height="512" alt="DCS Statistics Dashboard Logo" src="https://github.com/user-attachments/assets/2a685a5c-9847-4b31-92aa-55d0f88d8209" />
+</p>
 
 ![Filament 4.x Required](https://img.shields.io/badge/Filament-4.x-FF2D20?style=for-the-badge)
 [![DCSServerBotAPI](https://img.shields.io/badge/DCS_Server_Bot_API-0.3-green?style=for-the-badge)](https://github.com/pschilly/dcs-server-bot-api)
