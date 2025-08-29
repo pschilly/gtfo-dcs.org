@@ -3,7 +3,3 @@
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
 @source '../../../../vendor/pschilly/filament-dcs-server-stats/resources/**/*.blade.php';
-
-.top_banner {
-    @apply bg-fixed h-48;
-}

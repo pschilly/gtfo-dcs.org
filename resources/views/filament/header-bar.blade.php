@@ -1,1 +1,1 @@
-<div class="top_banner" style="background-image: url('{{ secure_asset('/storage/'.\Inerba\DbConfig\DbConfig::get('brand.header-image', ''))}}');"></div>
+<div class="bg-cover bg-center bg-no-repeat bg-blend-multiply h-48 bg-gray-600" style="background-image: url('{{ secure_asset('/storage/'.\Inerba\DbConfig\DbConfig::get('brand.header-image', ''))}}');"></div>
