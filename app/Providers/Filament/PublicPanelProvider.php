@@ -117,13 +117,42 @@ class PublicPanelProvider extends PanelProvider
     {
         return db_config('brand.site-name', config('app.name'));
     }
-    protected function resolveBrandLogo(): string
+    protected function resolveBrandLogo(): ?string
     {
-        return db_config('brand.site-logo', '');
+        $logo = db_config('brand.site-logo', '');
+        return empty($logo) ? null : secure_asset('/storage/' . $logo);
     }
-    protected function resolveFavicon(): string
+
+    protected function resolveFavicon(): ?string
     {
-        return db_config('brand.favicon', '');
+        $favicon = db_config('brand.favicon', '');
+        return empty($favicon) ? null : secure_asset('/storage/' . $favicon);
+    }
+
+    protected function resolveColors(): array
+    {
+        $raw = db_config('brand.colors', []);
+        $colors = is_array($raw) && isset($raw[0]) ? $raw[0] : [];
+
+        $keys = ['primary', 'gray', 'success', 'info', 'warning', 'danger'];
+        $defaults = [
+            'primary' => 'Emerald',
+            'gray'    => 'Stone',
+            'success' => 'Green',
+            'info'    => 'Sky',
+            'warning' => 'Amber',
+            'danger'  => 'Red',
+        ];
+
+        $result = [];
+        foreach ($keys as $key) {
+            // Convert tailwind color to StudlyCase for constant name
+            $color = $colors[$key] ?? strtolower($defaults[$key]);
+            $studly = \Illuminate\Support\Str::studly($color);
+            $const = "Filament\\Support\\Colors\\Color::{$studly}";
+            $result[$key] = defined($const) ? constant($const) : constant("Filament\\Support\\Colors\\Color::{$defaults[$key]}");
+        }
+        return $result;
     }
 
     public function panel(Panel $panel): Panel
@@ -136,9 +165,7 @@ class PublicPanelProvider extends PanelProvider
             ->brandName($this->resolveBrandName())
             ->brandLogo($this->resolveBrandLogo())
             ->favicon($this->resolveFavicon())
-            ->colors([
-                'primary' => Color::Emerald,
-            ])
+            ->colors($this->resolveColors())
             ->pages([
                 Dashboard::class,
             ])

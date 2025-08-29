@@ -1,7 +1,3 @@
-@php
-  $brandName = filament()->getBrandName();
-  $brandLogo = filament()->getBrandLogo();
-@endphp
-<div class="top_banner">
+<div class="top_banner" style="background-image: url('{{ secure_asset(\Inerba\DbConfig\DbConfig::get('brand.header-image', ''))}}');">
 
 </div>
