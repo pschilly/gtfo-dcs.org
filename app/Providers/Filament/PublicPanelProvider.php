@@ -85,12 +85,17 @@ class PublicPanelProvider extends PanelProvider
     {
         $slugs = db_config('feature.leaderboard-columns', []);
 
-        // Allow wildcard to mean "all default widgets" (handled by plugin if we return empty here)
+        // If wildcard, return empty array (let plugin load defaults)
         if ($slugs === '*' || (is_array($slugs) && in_array('*', $slugs, true))) {
-            return []; // Let plugin load its defaults
+            return [];
         }
 
-        return $slugs;
+        // If it's a string, wrap in array
+        if (is_string($slugs)) {
+            return [$slugs];
+        }
+
+        return is_array($slugs) ? $slugs : [];
     }
 
     protected function resolvePlayerStatsWidgets(): array
