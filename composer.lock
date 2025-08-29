@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ee6ff53fdd67a4093ea30bd2b310d9c8",
+    "content-hash": "72e656757c66fc4b16ca7a1f5ea4a5a1",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2340,16 +2340,16 @@
         },
         {
             "name": "inerba/filament-db-config",
-            "version": "v1.0.1",
+            "version": "v1.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/inerba/filament-db-config.git",
-                "reference": "a32e67bd3ebe685355fc528b1b785ca2c5b4b098"
+                "reference": "e4702500c03b8c4a129a1e14a6740feb4053169b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/inerba/filament-db-config/zipball/a32e67bd3ebe685355fc528b1b785ca2c5b4b098",
-                "reference": "a32e67bd3ebe685355fc528b1b785ca2c5b4b098",
+                "url": "https://api.github.com/repos/inerba/filament-db-config/zipball/e4702500c03b8c4a129a1e14a6740feb4053169b",
+                "reference": "e4702500c03b8c4a129a1e14a6740feb4053169b",
                 "shasum": ""
             },
             "require": {
@@ -2358,14 +2358,7 @@
                 "spatie/laravel-package-tools": "^1.15.0"
             },
             "require-dev": {
-                "larastan/larastan": "^3.6",
-                "laravel/pint": "^1.14",
-                "nunomaduro/collision": "^8",
-                "orchestra/testbench": "^9.0",
-                "pestphp/pest": "^2.0",
-                "pestphp/pest-plugin-arch": "^2.0",
-                "pestphp/pest-plugin-laravel": "^2.0",
-                "spatie/laravel-ray": "^1.35"
+                "laravel/pint": "^1.14"
             },
             "type": "library",
             "extra": {
@@ -2393,23 +2386,24 @@
             ],
             "authors": [
                 {
-                    "name": "Francesco",
+                    "name": "Francesco Apruzzese",
                     "email": "inerba@gmail.com",
                     "role": "Developer"
                 }
             ],
-            "description": "DB Config – A Filament plugin that provides a database-backed key/value store for application settings, with caching and easy settings page generation.",
+            "description": "A Filament plugin for database-backed application settings and editable content, with caching and easy page generation.",
             "homepage": "https://github.com/inerba/filament-db-config",
             "keywords": [
                 "filament",
                 "filament-plugin",
-                "laravel"
+                "laravel",
+                "laravel-filament"
             ],
             "support": {
                 "issues": "https://github.com/inerba/filament-db-config/issues",
                 "source": "https://github.com/inerba/filament-db-config"
             },
-            "time": "2025-08-25T12:42:06+00:00"
+            "time": "2025-08-28T16:35:14+00:00"
         },
         {
             "name": "jeffersongoncalves/filament-cookie-consent",

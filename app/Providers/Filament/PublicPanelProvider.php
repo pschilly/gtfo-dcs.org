@@ -15,9 +15,117 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Illuminate\Support\Str;
+use Pschilly\FilamentDcsServerStats\Widgets\DailyPlayersChart;
 
 class PublicPanelProvider extends PanelProvider
 {
+    protected function resolveConfiguredPages(): array
+    {
+        $raw = db_config('feature.pages', []);
+
+        // Allow wildcard to mean "all default pages" (handled by plugin if we return empty here)
+        if ($raw === '*' || (is_array($raw) && in_array('*', $raw, true))) {
+            return []; // Let plugin load its defaults
+        }
+
+        // Extract page-name from each object
+        $slugs = collect($raw)->pluck('page-name')->all();
+
+        $overrides = [
+            'player-stats' => 'PlayerStats',
+            'leaderboard'  => 'Leaderboard',
+            'squadrons'    => 'Squadrons',
+            'servers'      => 'Servers',
+        ];
+
+        return collect($slugs)
+            ->filter()
+            ->unique()
+            ->map(function (string $slug) use ($overrides) {
+                $classBase = $overrides[$slug] ?? \Illuminate\Support\Str::studly($slug);
+                $fqcn = "Pschilly\\FilamentDcsServerStats\\Pages\\{$classBase}";
+                return class_exists($fqcn) ? $fqcn : null;
+            })
+            ->filter()
+            ->values()
+            ->all();
+    }
+
+    protected function resolveDashboardWidgets(): array
+    {
+        $raw = db_config('feature.dashboard-widgets', []);
+
+        // Allow wildcard to mean "all default widgets" (handled by plugin if we return empty here)
+        if ($raw === '*' || (is_array($raw) && in_array('*', $raw, true))) {
+            return []; // Let plugin load its defaults
+        }
+
+        // Extract widget-name from each object
+        $slugs = collect($raw)->pluck('widget-name')->all();
+
+        $overrides = [
+            'daily-players-chart' => 'DailyPlayersChart',
+            'server-statistics'   => 'ServerStatistics',
+            'top-pilots'          => 'TopPilots',
+            'top-squadrons'       => 'TopSquadrons',
+        ];
+
+        return collect($slugs)
+            ->filter()
+            ->unique()
+            ->map(function (string $slug) use ($overrides) {
+                $classBase = $overrides[$slug] ?? \Illuminate\Support\Str::studly($slug);
+                $fqcn = "Pschilly\\FilamentDcsServerStats\\Widgets\\{$classBase}";
+                return class_exists($fqcn) ? $fqcn : null;
+            })
+            ->filter()
+            ->values()
+            ->all();
+    }
+
+    protected function resolveLeaderboardColumns(): array
+    {
+        $slugs = db_config('feature.leaderboard-columns', []);
+
+        // Allow wildcard to mean "all default widgets" (handled by plugin if we return empty here)
+        if ($slugs === '*' || (is_array($slugs) && in_array('*', $slugs, true))) {
+            return []; // Let plugin load its defaults
+        }
+
+        return $slugs;
+    }
+
+    protected function resolvePlayerStatsWidgets(): array
+    {
+        $slugs = db_config('feature.player-stats-widgets', []);
+
+        // Allow wildcard to mean "all default widgets" (handled by plugin if we return empty here)
+        if ($slugs === '*' || (is_array($slugs) && in_array('*', $slugs, true))) {
+            return []; // Let plugin load its defaults
+        }
+
+        return $slugs;
+    }
+
+    protected function resolveServerSelector(): bool
+    {
+        return db_config('feature.server-selector', false);
+    }
+
+    protected function resolveBrandName(): string
+    {
+        return db_config('brand.site-name', config('app.name'));
+    }
+    protected function resolveBrandLogo(): string
+    {
+        return db_config('brand.site-logo', '');
+    }
+    protected function resolveFavicon(): string
+    {
+        return db_config('brand.favicon', '');
+    }
+
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -25,16 +133,15 @@ class PublicPanelProvider extends PanelProvider
             ->id('public')
             ->path('')
             ->topNavigation()
+            ->brandName($this->resolveBrandName())
+            ->brandLogo($this->resolveBrandLogo())
+            ->favicon($this->resolveFavicon())
             ->colors([
                 'primary' => Color::Emerald,
             ])
-            ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
-            ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
-                Dashboard::class
+                Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\Filament\Widgets')
-            ->widgets([])
             ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
@@ -48,7 +155,12 @@ class PublicPanelProvider extends PanelProvider
             ])
             ->authMiddleware([])
             ->plugins([
-                \Pschilly\FilamentDcsServerStats\FilamentDcsServerStatsPlugin::make(),
+                \Pschilly\FilamentDcsServerStats\FilamentDcsServerStatsPlugin::make()
+                    ->serverSelector($this->resolveServerSelector())
+                    ->pages($this->resolveConfiguredPages())
+                    ->dashboardWidgets($this->resolveDashboardWidgets())
+                    ->leaderboardColumns($this->resolveLeaderboardColumns())
+                    ->playerStatsWidgets($this->resolvePlayerStatsWidgets()),
             ])
             ->viteTheme('resources/css/filament/public/theme.css')
             ->spa();
