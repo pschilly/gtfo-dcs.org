@@ -2,8 +2,7 @@
 
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
-/* //TODO make sure this is added to the docs!! */
-@source '../../../../vendor/pschilly/filament-dcs-server-stats/resources/views/**/*.blade.php';
+@source '../../../../vendor/pschilly/filament-dcs-server-stats/resources/**/*.blade.php';
 
 .top_banner {
     @apply bg-fixed h-48;
