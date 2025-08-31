@@ -102,6 +102,7 @@ Install the composer assets & generate the CSS & JS build files.
 
 ```bash
 composer install
+npm install
 npm run build
 ```
 
