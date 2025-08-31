@@ -71,7 +71,7 @@ Every Laravel project needs an .env file - this is where a lot of the base confi
 cp .env.example .env
 ```
 
-Generate an App Key with `artisan` - this is used as a salt for all encryption and is unique to each install.
+Generate an App Key with `php artisan key:generate` - this is used as a salt for all encryption and is unique to each install.
 
 Once you have copied the .env file - open it up and scroll to the bottom. Fill in the following:
 
