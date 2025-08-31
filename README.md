@@ -63,16 +63,7 @@ Using Git to clone the repo is the suggested method - this will make updates dow
 git clone https://github.com/Penfold-88/DCS-Statistics-Dashboard
 ```
 
-### III - Composer Install, NPM Build
-
-Install the composer assets & generate the CSS & JS build files.
-
-```bash
-composer install
-npm run build
-```
-
-### IV - ENV File & App Key
+### II - ENV File & App Key
 
 Every Laravel project needs an .env file - this is where a lot of the base configuration is stored and so long as you have setup your webserver correctly, it is entirely inaccessable to the world which makes it the perfect place to store things like API keys.
 
@@ -95,18 +86,31 @@ DCS_BOT_API_KEY=  // This is the key you set in your Rest API configuration file
 php artisan key:generate
 ```
 
-### V - Migrations
+### III - Database
 
-This Dashboard relies on a small SQ Lite database in order to store information for configuration settings. First you must create the DB:
+This project ships with a default database setup. Let's copy it to the right spot:
 
 ```bash
-touch database/database.sqlite
+cp database.sqlite.default database/database.sqlite
 ```
 
-Then run the migrations & seeder:
+Once you have copied it over - continue on.
+
+### IV - Composer Install, NPM Build
+
+Install the composer assets & generate the CSS & JS build files.
 
 ```bash
-php artisan migrate --seed --force
+composer install
+npm run build
+```
+
+### V - DB Seed
+
+The small SQLite database has been resetup with most of the application defaults you need. The part that still remains is getting the default admin user created. Do so with the db seeder:
+
+```bash
+php artisan db:seed --force
 ```
 
 Once that is complete - you are good to go! I highly suggest you change the default admin credentials:
