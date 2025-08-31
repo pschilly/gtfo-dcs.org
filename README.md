@@ -73,9 +73,11 @@ cp .env.example .env
 
 Generate an App Key with `php artisan key:generate` - this is used as a salt for all encryption and is unique to each install.
 
-Once you have copied the .env file - open it up and scroll to the bottom. Fill in the following:
+Once you have copied the .env file - open it up and modify the following:
 
 ```php
+APP_URL= //Set this to the fqdn for your stats website. EG: https://your-stats.domain
+
 # DCS Server Bot Websockets API URL
 DCS_BOT_API_URL=  // This is both the IP address (or fqdn) and port. EG: http://localhost:9876
 # DCS Server Bot API Key
@@ -123,6 +125,14 @@ Password: password
 
 You can do so by logging into the stats-config panel and going to the profile:
 `https://your-project.domain/stats-config/profile`
+
+### VI - Storage Link
+
+In order for the application to find the images you upload in the branding, you need to link the storage. Do so with artisan:
+
+```bash
+php artisan storage:link
+```
 
 ## 🎯 Brand Configuration
 
