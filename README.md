@@ -71,21 +71,21 @@ Every Laravel project needs an .env file - this is where a lot of the base confi
 cp .env.example .env
 ```
 
-Generate an App Key with `php artisan key:generate` - this is used as a salt for all encryption and is unique to each install.
-
-Once you have copied the .env file - open it up and modify the following:
-
-```php
-APP_URL= //Set this to the fqdn for your stats website. EG: https://your-stats.domain
-
-# DCS Server Bot Websockets API URL
-DCS_BOT_API_URL=  // This is both the IP address (or fqdn) and port. EG: http://localhost:9876
-# DCS Server Bot API Key
-DCS_BOT_API_KEY=  // This is the key you set in your Rest API configuration files on the DCS Server Bot.
-```
+Generate an App Key with artisan - this is used as a salt for all encryption and is unique to each install.
 
 ```bash
 php artisan key:generate
+```
+
+Open up the .ENV and modify the following:
+
+```php
+APP_URL=                //Set this to the fqdn for your stats website. EG: https://your-stats.domain
+
+# DCS Server Bot Websockets API URL
+DCS_BOT_API_URL=        // This is both the IP address (or fqdn) and port. EG: http://localhost:9876
+# DCS Server Bot API Key
+DCS_BOT_API_KEY=        // This is the key you set in your Rest API configuration files on the DCS Server Bot.
 ```
 
 ### III - Database
@@ -132,6 +132,14 @@ In order for the application to find the images you upload in the branding, you 
 
 ```bash
 php artisan storage:link
+```
+
+### VII - Optmize For Production Enviornment
+
+Laravel is setup to pre-render views, etc... This greatly decreases load times. Do so with artisan:
+
+```bash
+php artisan optimize
 ```
 
 ## 🎯 Brand Configuration
