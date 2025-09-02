@@ -4726,16 +4726,16 @@
         },
         {
             "name": "pschilly/filament-dcs-server-stats",
-            "version": "v1.0.3",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pschilly/filament-dcs-server-stats.git",
-                "reference": "596b4a0908647ff4293a15efd513411accee37a9"
+                "reference": "e0fb7501fe3065f50091bb74b0ae3a706e0d24be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pschilly/filament-dcs-server-stats/zipball/596b4a0908647ff4293a15efd513411accee37a9",
-                "reference": "596b4a0908647ff4293a15efd513411accee37a9",
+                "url": "https://api.github.com/repos/pschilly/filament-dcs-server-stats/zipball/e0fb7501fe3065f50091bb74b0ae3a706e0d24be",
+                "reference": "e0fb7501fe3065f50091bb74b0ae3a706e0d24be",
                 "shasum": ""
             },
             "require": {
@@ -4805,7 +4805,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-09-02T19:36:09+00:00"
+            "time": "2025-09-02T20:14:26+00:00"
         },
         {
             "name": "psr/clock",
