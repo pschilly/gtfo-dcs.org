@@ -121,14 +121,22 @@ class PublicPanelProvider extends PanelProvider
     }
     protected function resolveBrandLogo(): ?string
     {
-        $logo = db_config('brand.site-logo', '');
-        return empty($logo) ? null : secure_asset('/storage/' . $logo);
+        $logo = db_config('brand.brand-logo', '');
+        if (empty($logo)) {
+            return null;
+        }
+        $assetPath = '/storage/' . $logo;
+        return request()->isSecure() ? secure_asset($assetPath) : asset($assetPath);
     }
 
     protected function resolveFavicon(): ?string
     {
         $favicon = db_config('brand.favicon', '');
-        return empty($favicon) ? null : secure_asset('/storage/' . $favicon);
+        if (empty($favicon)) {
+            return null;
+        }
+        $assetPath = '/storage/' . $favicon;
+        return request()->isSecure() ? secure_asset($assetPath) : asset($assetPath);
     }
 
     protected function resolveColors(): array
@@ -159,6 +167,8 @@ class PublicPanelProvider extends PanelProvider
 
     public function panel(Panel $panel): Panel
     {
+
+
         return $panel
             ->default()
             ->id('public')
